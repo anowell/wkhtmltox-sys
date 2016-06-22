@@ -1,0 +1,6 @@
+[package]
+name = "libwkhtmltox-sys"
+version = "0.1.0"
+authors = ["Anthony Nowell <anowell@gmail.com>"]
+
+[dependencies]

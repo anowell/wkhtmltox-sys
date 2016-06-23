@@ -4,7 +4,6 @@
          non_camel_case_types,
          non_upper_case_globals,
          non_snake_case)]
-
 pub enum wkhtmltopdf_global_settings { }
 pub enum wkhtmltopdf_object_settings { }
 pub enum wkhtmltopdf_converter { }
@@ -16,9 +15,7 @@ pub type wkhtmltopdf_int_callback =
                                                  val: ::std::os::raw::c_int)>;
 pub type wkhtmltopdf_void_callback =
     ::std::option::Option<unsafe extern "C" fn(converter: *mut wkhtmltopdf_converter)>;
-
-
-#[link(name = "libwkhtmltox", kind = "dylib")]
+#[link(name = "wkhtmltox", kind = "dylib")]
 extern "C" {
     pub fn wkhtmltopdf_init(use_graphics: ::std::os::raw::c_int) -> ::std::os::raw::c_int;
     pub fn wkhtmltopdf_deinit() -> ::std::os::raw::c_int;

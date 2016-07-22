@@ -53,11 +53,11 @@ fn main() {
         if wkhtmltopdf_convert(converter) != 1 {
             println!("Conversion failed");
         } {
-            let data: *mut *const c_uchar = std::mem::zeroed();
+            let mut data = std::ptr::null();
             println!("Calling wkhtmltopdf_get_output");
-            let bytes = wkhtmltopdf_get_output(converter, data) as usize;
+            let bytes = wkhtmltopdf_get_output(converter, &mut data) as usize;
             println!("Received {} bytes", bytes);
-            let buf_slice = std::slice::from_raw_parts(*data as *const c_uchar, bytes);
+            let buf_slice = std::slice::from_raw_parts(data, bytes);
         }
 
         wkhtmltopdf_destroy_converter(converter);

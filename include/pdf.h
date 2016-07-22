@@ -19,7 +19,7 @@
 
 #ifndef __PDF_H__
 #define __PDF_H__
-#include "dllbegin.inc"
+#include <wkhtmltox/dllbegin.inc>
 
 struct wkhtmltopdf_global_settings;
 typedef struct wkhtmltopdf_global_settings wkhtmltopdf_global_settings;
@@ -72,5 +72,5 @@ CAPI(const char *) wkhtmltopdf_progress_string(wkhtmltopdf_converter * converter
 CAPI(int) wkhtmltopdf_http_error_code(wkhtmltopdf_converter * converter);
 CAPI(long) wkhtmltopdf_get_output(wkhtmltopdf_converter * converter, const unsigned char **);
 
-#include "dllend.inc"
+#include <wkhtmltox/dllend.inc>
 #endif /*__PDF_H__*/

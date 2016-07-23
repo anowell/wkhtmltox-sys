@@ -1,0 +1,1 @@
+initSidebarItems({"mod":[["image","Convert HTML to image"],["pdf","Convert HTML to PDF"]]});

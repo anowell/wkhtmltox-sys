@@ -1,6 +1,12 @@
 [package]
-name = "libwkhtmltox-sys"
+name = "wkhtmltox-sys"
 version = "0.1.0"
+license = "MIT"
 authors = ["Anthony Nowell <anowell@gmail.com>"]
 
-[dependencies]
+description = "FFI bindings to wkhtmltox"
+documentation = "http://anowell.github.io/wkthmltox-sys/wkhtmltox-sys/"
+repository = "https://github.com/anowell/wkhtlmtox-sys"
+readme = "README.md"
+keywords = ["wkhtmltox", "wkhtmltopdf", "wkhtmltoimage", "pdf", "ffi", "libwkhtmltox"]
+

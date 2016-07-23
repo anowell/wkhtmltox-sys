@@ -1,4 +1,4 @@
-# libwkhtmltox-sys
+# wkhtmltox-sys
 
 Auto-generated bindings to libwkhtmltox
 

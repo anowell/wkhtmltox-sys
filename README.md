@@ -6,6 +6,8 @@ See [wkhtmltopdf-rs](https://github.com/anowell/wkhtmltopdf-rs) for the abstract
 
 You'll need libwkhtmltox installed.
 
+[Documentation](https://anowell.github.io/wkhtmltox-sys/wkhtmltox_sys/)
+
 ## Generating
 
 This is generated with bindgen:

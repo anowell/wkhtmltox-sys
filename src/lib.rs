@@ -31,7 +31,7 @@
 ///         // Read the data into `pdf_buf: Vec<u8>`
 ///         let mut data = std::ptr::null();
 ///         let bytes = wkhtmltopdf_get_output(converter, &mut data) as usize;
-///         let pdf_buf = std::slice::from_raw_parts(data, bytes);
+///         let _pdf_buf = std::slice::from_raw_parts(data, bytes);
 ///     }
 ///
 ///     wkhtmltopdf_destroy_converter(converter);

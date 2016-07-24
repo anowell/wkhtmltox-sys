@@ -32,6 +32,9 @@ fn main() {
     let html = CString::new(r##"<b>foo</b>bar"##).expect("null byte found");
 
     unsafe {
+        let version = CStr::from_ptr(wkhtmltopdf_version()).to_string_lossy();
+        println!("Version: {}", version);
+
         // Init wkhtmltopdf in graphics-less mode
         if wkhtmltopdf_init(0) != 1 {
             return println!("Init failed");

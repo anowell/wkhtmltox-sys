@@ -30,6 +30,9 @@ int main(void){
     wkhtmltopdf_object_settings * os;
     wkhtmltopdf_converter * converter;
 
+    const char *version = wkhtmltopdf_version();
+    printf("Version: %s\n", version);
+
     // Init wkhtmltopdf in graphics-less mode
     if(wkhtmltopdf_init(false) != 1) {
         return printf("Init failed");

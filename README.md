@@ -1,12 +1,14 @@
 # wkhtmltox-sys
 
-Auto-generated bindings to libwkhtmltox
+Auto-generated bindings to libwkhtmltox. Depends on libwkhtmltox being installed.
 
-See [wkhtmltopdf-rs](https://github.com/anowell/wkhtmltopdf-rs) for the abstracted higher-level bindings.
+Resource  | Link    
+----- | -----
+Crate | [![Crates.io](https://img.shields.io/crates/v/wkhtmltox-sys.svg?maxAge=2592000)](https://crates.io/crates/wkhtmltox-sys)
+Documentation | [Cargo docs](https://anowell.github.io/wkhtmltox-sys/wkhtmltox_sys/)
+High-level bindings | [wkhtmltopdf-rs](https://github.com/anowell/wkhtmltopdf-rs)
+Upstream | [wkhtmltopdf.org](http://wkhtmltopdf.org/)
 
-You'll need libwkhtmltox installed.
-
-[Documentation](https://anowell.github.io/wkhtmltox-sys/wkhtmltox_sys/)
 
 ## Generating
 

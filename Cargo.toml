@@ -6,7 +6,7 @@ authors = ["Anthony Nowell <anowell@gmail.com>"]
 
 description = "FFI bindings to wkhtmltox"
 documentation = "http://anowell.github.io/wkthmltox-sys/wkhtmltox-sys/"
-repository = "https://github.com/anowell/wkhtlmtox-sys"
+repository = "https://github.com/anowell/wkhtmltox-sys"
 readme = "README.md"
 keywords = ["wkhtmltox", "wkhtmltopdf", "wkhtmltoimage", "pdf", "html"]
 

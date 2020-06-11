@@ -1,31 +1,31 @@
 extern crate wkhtmltox_sys;
 
-use wkhtmltox_sys::pdf::*;
-use std::ffi::{CString, CStr};
+use std::ffi::{CStr, CString};
 use std::os::raw::{c_char, c_int};
+use wkhtmltox_sys::pdf::*;
 
-unsafe extern fn finished(_converter: *mut wkhtmltopdf_converter, val: c_int) {
+unsafe extern "C" fn finished(_converter: *mut wkhtmltopdf_converter, val: c_int) {
     println!("Finished: {}", val);
 }
 
-unsafe extern fn error_cb(_converter: *mut wkhtmltopdf_converter, ptr: *const c_char) {
+unsafe extern "C" fn error_cb(_converter: *mut wkhtmltopdf_converter, ptr: *const c_char) {
     let msg = CStr::from_ptr(ptr).to_string_lossy();
     println!("Error: {}", msg);
 }
 
-unsafe extern fn warning_cb(_converter: *mut wkhtmltopdf_converter, ptr: *const c_char) {
+unsafe extern "C" fn warning_cb(_converter: *mut wkhtmltopdf_converter, ptr: *const c_char) {
     let msg = CStr::from_ptr(ptr).to_string_lossy();
     println!("Warning: {}", msg);
 }
 
-unsafe extern fn progress_changed(_converter: *mut wkhtmltopdf_converter, val: c_int) {
+unsafe extern "C" fn progress_changed(_converter: *mut wkhtmltopdf_converter, val: c_int) {
     println!("{:3}", val);
 }
 
-unsafe extern fn phase_changed(converter: *mut wkhtmltopdf_converter) {
+unsafe extern "C" fn phase_changed(converter: *mut wkhtmltopdf_converter) {
     let phase = wkhtmltopdf_current_phase(converter);
     let desc = wkhtmltopdf_phase_description(converter, phase);
-	println!("Phase: {}", CStr::from_ptr(desc).to_string_lossy());
+    println!("Phase: {}", CStr::from_ptr(desc).to_string_lossy());
 }
 
 fn main() {
@@ -52,11 +52,11 @@ fn main() {
         wkhtmltopdf_set_error_callback(converter, Some(error_cb));
         wkhtmltopdf_set_warning_callback(converter, Some(warning_cb));
 
-
         // Perform the conversion
         if wkhtmltopdf_convert(converter) != 1 {
             println!("Conversion failed");
-        } {
+        }
+        {
             let mut data = std::ptr::null();
             let bytes = wkhtmltopdf_get_output(converter, &mut data) as usize;
             println!("Received {} bytes", bytes);
@@ -67,4 +67,3 @@ fn main() {
         wkhtmltopdf_deinit();
     }
 }
-

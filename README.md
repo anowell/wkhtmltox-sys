@@ -32,6 +32,6 @@ target/debug/examples/convert-string
 The C example can be built with gcc:
 
 ```
-gcc -g -Wall examples/convert-string.c -o target/convert-string-c -lwkhtmltox
-target/convert-string-c
+gcc -g -Wall examples/convert-string-to-pdf.c -o target/convert-string-to-pdf-c -lwkhtmltox
+target/convert-string-to-pdf-c
 ```

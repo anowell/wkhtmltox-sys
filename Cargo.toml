@@ -12,4 +12,6 @@ keywords = ["wkhtmltox", "wkhtmltopdf", "wkhtmltoimage", "pdf", "html"]
 
 [dependencies]
 libloading = "0.7"
+
+[dev-dependencies]
 lazy_static = "1.4"

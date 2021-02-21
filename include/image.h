@@ -1,5 +1,7 @@
-/*
- * Copyright 2010 wkhtmltopdf authors
+/* -*- mode: c++; tab-width: 4; indent-tabs-mode: t; eval: (progn (c-set-style "stroustrup") (c-set-offset 'innamespace 0)); -*-
+ * vi:set ts=4 sts=4 sw=4 noet :
+ *
+ * Copyright 2010-2020 wkhtmltopdf authors
  *
  * This file is part of wkhtmltopdf.
  *
@@ -19,7 +21,12 @@
 
 #ifndef __IMAGE_H__
 #define __IMAGE_H__
+
+#ifdef BUILDING_WKHTMLTOX
+#include "dllbegin.inc"
+#else
 #include <wkhtmltox/dllbegin.inc>
+#endif
 
 struct wkhtmltoimage_global_settings;
 typedef struct wkhtmltoimage_global_settings wkhtmltoimage_global_settings;
@@ -44,6 +51,8 @@ CAPI(int) wkhtmltoimage_get_global_setting(wkhtmltoimage_global_settings * setti
 CAPI(wkhtmltoimage_converter *) wkhtmltoimage_create_converter(wkhtmltoimage_global_settings * settings, const char * data);
 CAPI(void) wkhtmltoimage_destroy_converter(wkhtmltoimage_converter * converter);
 
+CAPI(void) wkhtmltoimage_set_debug_callback(wkhtmltoimage_converter * converter, wkhtmltoimage_str_callback cb);
+CAPI(void) wkhtmltoimage_set_info_callback(wkhtmltoimage_converter * converter, wkhtmltoimage_str_callback cb);
 CAPI(void) wkhtmltoimage_set_warning_callback(wkhtmltoimage_converter * converter, wkhtmltoimage_str_callback cb);
 CAPI(void) wkhtmltoimage_set_error_callback(wkhtmltoimage_converter * converter, wkhtmltoimage_str_callback cb);
 CAPI(void) wkhtmltoimage_set_phase_changed_callback(wkhtmltoimage_converter * converter, wkhtmltoimage_void_callback cb);
@@ -60,5 +69,10 @@ CAPI(const char *) wkhtmltoimage_progress_string(wkhtmltoimage_converter * conve
 CAPI(int) wkhtmltoimage_http_error_code(wkhtmltoimage_converter * converter);
 CAPI(long) wkhtmltoimage_get_output(wkhtmltoimage_converter * converter, const unsigned char **);
 
+#ifdef BUILDING_WKHTMLTOX
+#include "dllend.inc"
+#else
 #include <wkhtmltox/dllend.inc>
+#endif
+
 #endif /*__IMAGE_H__*/

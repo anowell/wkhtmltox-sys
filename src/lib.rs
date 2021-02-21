@@ -1,6 +1,8 @@
 //! Low-level bindings for wkhtmltopdf and wkhtmltoimage
 //!
-//! These bindings currently depend on libwkhtmltox 0.12.3
+//! These bindings currently depend on libwkhtmltox 0.12
+
+use std::env::consts::{DLL_PREFIX, DLL_SUFFIX};
 
 /// Convert HTML to PDF
 ///
@@ -48,3 +50,8 @@ pub mod pdf;
 
 /// Convert HTML to image
 pub mod image;
+
+/// Return the `wkhtmltox` library name
+pub fn get_library_name() -> String {
+    format!("{}wkhtmltox{}", DLL_PREFIX, DLL_SUFFIX)
+}

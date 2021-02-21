@@ -1,6 +1,6 @@
 [package]
 name = "wkhtmltox-sys"
-version = "0.1.1"
+version = "0.1.2"
 license = "MIT"
 authors = ["Anthony Nowell <anowell@gmail.com>"]
 
@@ -10,3 +10,6 @@ repository = "https://github.com/anowell/wkhtmltox-sys"
 readme = "README.md"
 keywords = ["wkhtmltox", "wkhtmltopdf", "wkhtmltoimage", "pdf", "html"]
 
+[dependencies]
+libloading = "0.7"
+lazy_static = "1.4"
